@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Haddow-Allen | Strategic Partnership Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Serif+Display&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #005F4E;
+            --accent: #00B88D;
+            --accent-light: #7FDDC4;
+            --neutral: #F5F9F7;
+            --text: #1A3A34;
+            --green: #00B88D;
+            --blue: #008B75;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--neutral);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 95, 78, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 30px rgba(0, 95, 78, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button::after {
+            display: none;
+        }
+
+        .cta-button:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 184, 141, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 80px;
+            background: linear-gradient(135deg, var(--neutral) 0%, #E8F4F0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 184, 141, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 1s ease forwards;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 72px;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 184, 141, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 95, 78, 0.2);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            animation: fadeInRight 1s ease forwards;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .stat-box {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 95, 78, 0.08);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 0 15px 50px rgba(0, 95, 78, 0.15);
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 52px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 56px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Capabilities Grid */
+        #capabilities {
+            background: white;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .capability-card {
+            background: var(--neutral);
+            padding: 40px;
+            border-radius: 16px;
+            border-top: 4px solid var(--accent);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 184, 141, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .capability-card:hover::before {
+            left: 100%;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 95, 78, 0.15);
+        }
+
+        .capability-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .capability-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .capability-description {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text);
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .capability-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: white;
+            border: 1px solid var(--accent-light);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        #experience {
+            background: linear-gradient(to bottom, var(--neutral), white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:first-child {
+            text-align: right;
+            grid-column: 1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:last-child {
+            grid-column: 3;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:first-child {
+            grid-column: 3;
+            order: 3;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:last-child {
+            grid-column: 1;
+            order: 1;
+        }
+
+        .timeline-dot {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border: 6px solid white;
+            border-radius: 50%;
+            position: relative;
+            grid-column: 2;
+            justify-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0, 184, 141, 0.3);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 30px rgba(0, 95, 78, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 95, 78, 0.15);
+        }
+
+        .timeline-year {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-role {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-company {
+            font-size: 17px;
+            color: var(--text);
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .timeline-achievements {
+            list-style: none;
+        }
+
+        .timeline-achievements li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .timeline-achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: white;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: var(--neutral);
+            padding: 40px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--blue);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 95, 78, 0.12);
+        }
+
+        .skill-category h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 10px 16px;
+            background: white;
+            border: 1px solid var(--accent-light);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Awards Section */
+        #awards {
+            background: var(--primary);
+            color: white;
+        }
+
+        #awards .section-label {
+            color: var(--accent-light);
+        }
+
+        #awards .section-title {
+            color: white;
+        }
+
+        #awards .section-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .award-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .award-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .award-year {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .award-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .award-description {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--neutral);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 30px rgba(0, 95, 78, 0.08);
+            border-top: 4px solid var(--green);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0, 95, 78, 0.15);
+        }
+
+        .education-year {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .education-degree {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .education-institution {
+            font-size: 15px;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--neutral) 0%, white 100%);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 30px rgba(0, 95, 78, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            min-width: 200px;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0, 95, 78, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            color: var(--accent);
+        }
+
+        .contact-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* All content visible by default - no animations */
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-stats {
+                max-width: 600px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 60px 1fr;
+                gap: 30px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content:first-child,
+            .timeline-item:nth-child(odd) .timeline-content:first-child {
+                grid-column: 2;
+                text-align: left;
+                order: 2;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content:last-child,
+            .timeline-item:nth-child(odd) .timeline-content:last-child {
+                display: none;
+            }
+
+            .timeline-dot {
+                grid-column: 1;
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+                height: 70px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                gap: 25px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">EHA</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact" class="cta-button">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label">Strategic Leader in Insurance Technology</div>
+                <h1 class="hero-title">Elizabeth Haddow-Allen</h1>
+                <p class="hero-description">
+                    Transforming complex partnerships through digital innovation, stakeholder engagement, 
+                    and strategic execution. 12+ years driving operational excellence in financial services.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#capabilities" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Industry Awards</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">$M+</div>
+                    <div class="stat-label">Partnership Value</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities">
+        <div class="section-header fade-in">
+            <div class="section-label">What I Do Best</div>
+            <h2 class="section-title">Digital Leadership & Innovation</h2>
+            <p class="section-description">
+                Leading complex digital transformations and strategic partnerships in the insurance and financial services sector
+            </p>
+        </div>
+        <div class="capabilities-grid">
+            <div class="capability-card fade-in">
+                <div class="capability-icon">🚀</div>
+                <h3 class="capability-title">Digital Roadmap Delivery</h3>
+                <p class="capability-description">
+                    Led comprehensive digital roadmap for Rest Super, delivering 70+ initiatives on-time across Insurance Operations, 
+                    Digital Transformation, and Regulatory Compliance workstreams.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Partnership Leadership</span>
+                    <span class="tag">On-Time Delivery</span>
+                    <span class="tag">Cross-Functional</span>
+                </div>
+            </div>
+
+            <div class="capability-card fade-in">
+                <div class="capability-icon">🌈</div>
+                <h3 class="capability-title">Inclusivity Innovation</h3>
+                <p class="capability-description">
+                    Drove 12-month initiative implementing gender-neutral titles and 'other' gender option in TAL systems, 
+                    breaking through historical barriers that stopped other funds.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Change Management</span>
+                    <span class="tag">DEI Leadership</span>
+                    <span class="tag">Zero Cost Solution</span>
+                </div>
+            </div>
+
+            <div class="capability-card fade-in">
+                <div class="capability-icon">🔄</div>
+                <h3 class="capability-title">TAL Connect Implementation</h3>
+                <p class="capability-description">
+                    Provided critical support for TAL Connect rollout, managing stakeholder expectations and positioning 
+                    messaging based on deep understanding of partner dynamics.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Stakeholder Management</span>
+                    <span class="tag">Knowledge Transfer</span>
+                    <span class="tag">Strategic Positioning</span>
+                </div>
+            </div>
+
+            <div class="capability-card fade-in">
+                <div class="capability-icon">🔧</div>
+                <h3 class="capability-title">Systems Issue Resolution</h3>
+                <p class="capability-description">
+                    Identified and managed critical GHQ update issue affecting Rest claims, coordinating workaround and 
+                    delivering enhanced functionality alongside fix.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Problem Solving</span>
+                    <span class="tag">Crisis Management</span>
+                    <span class="tag">Value Addition</span>
+                </div>
+            </div>
+
+            <div class="capability-card fade-in">
+                <div class="capability-icon">📊</div>
+                <h3 class="capability-title">Data Transformation</h3>
+                <p class="capability-description">
+                    Led PowerBI reporting rollout as change champion, improving data accuracy and leading adoption 
+                    sessions across partnership teams.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Analytics</span>
+                    <span class="tag">Change Leadership</span>
+                    <span class="tag">Data Quality</span>
+                </div>
+            </div>
+
+            <div class="capability-card fade-in">
+                <div class="capability-icon">📋</div>
+                <h3 class="capability-title">Regulatory Compliance</h3>
+                <p class="capability-description">
+                    Self-initiated and led cross-partnership ASIC760 project, conducting gap analysis and improving 
+                    regulatory reporting alignment across TAL.
+                </p>
+                <div class="capability-tags">
+                    <span class="tag">Initiative</span>
+                    <span class="tag">Compliance</span>
+                    <span class="tag">Leadership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <div class="section-header fade-in">
+            <div class="section-label">Career Journey</div>
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-description">
+                Progressive growth through strategic roles in financial services and insurance technology
+            </p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2023 - Present</div>
+                    <h3 class="timeline-role">Senior Partnership Manager</h3>
+                    <div class="timeline-company">TAL</div>
+                    <ul class="timeline-achievements">
+                        <li>Led digital roadmap for Rest Super with 70+ deliverables across multiple workstreams</li>
+                        <li>Pioneered gender-inclusive system changes, breaking 12+ months of barriers</li>
+                        <li>Managed complex tri-party relationships (TAL, MUFG, Cbus)</li>
+                        <li>Self-initiated ASIC760 reporting project improving regulatory compliance</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot">23</div>
+                <div class="timeline-content"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2021 - 2023</div>
+                    <h3 class="timeline-role">Client Manager</h3>
+                    <div class="timeline-company">TAL</div>
+                    <ul class="timeline-achievements">
+                        <li>Coordinated 3 major proposals within 4 months while team understaffed</li>
+                        <li>Maintained BAU operations for 6 months with reduced capacity</li>
+                        <li>Developed comprehensive engagement framework with Rest leadership</li>
+                        <li>Led retention initiatives contributing to successful partnership renewal</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot">21</div>
+                <div class="timeline-content"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2020 - 2021</div>
+                    <h3 class="timeline-role">Client Analyst</h3>
+                    <div class="timeline-company">TAL</div>
+                    <ul class="timeline-achievements">
+                        <li>Supported technology rollout for Rest Super deliverables</li>
+                        <li>Coordinated UAT and partner testing of system changes</li>
+                        <li>Developed frameworks addressing internal audit findings</li>
+                        <li>Assessed operational impacts of remediation incidents</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot">20</div>
+                <div class="timeline-content"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018 - 2020</div>
+                    <h3 class="timeline-role">Team Manager – Group Claims</h3>
+                    <div class="timeline-company">TAL</div>
+                    <ul class="timeline-achievements">
+                        <li>Managed 11-person claims team for two Group funds</li>
+                        <li>Empowered team to develop specialized claims processes</li>
+                        <li>Chaired Claim Decision Committees for all policies</li>
+                        <li>Created strong client relationships while delivering excellence</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot">18</div>
+                <div class="timeline-content"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016 - 2018</div>
+                    <h3 class="timeline-role">Senior Rehabilitation Consultant</h3>
+                    <div class="timeline-company">CommInsure</div>
+                    <ul class="timeline-achievements">
+                        <li>Developed claims and rehabilitation guidelines</li>
+                        <li>Created tender presentation materials</li>
+                        <li>Implemented early review process for TPD claims</li>
+                        <li>Acted as 2IC in Manager's absence</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot">16</div>
+                <div class="timeline-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header fade-in">
+            <div class="section-label">Core Competencies</div>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-description">
+                Strategic, technical, and leadership capabilities built over 12+ years in financial services
+            </p>
+        </div>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Partnership Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Stakeholder Engagement</span>
+                        <span class="skill-tag">Relationship Building</span>
+                        <span class="skill-tag">Contract Management</span>
+                        <span class="skill-tag">Service Delivery</span>
+                        <span class="skill-tag">Client Retention</span>
+                        <span class="skill-tag">Expectation Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Digital Transformation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technology Roadmap</span>
+                        <span class="skill-tag">System Implementation</span>
+                        <span class="skill-tag">UAT & Testing</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Process Innovation</span>
+                        <span class="skill-tag">Digital Strategy</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Regulatory & Compliance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ASIC760 Reporting</span>
+                        <span class="skill-tag">CPS 230</span>
+                        <span class="skill-tag">RG271</span>
+                        <span class="skill-tag">Policy Endorsements</span>
+                        <span class="skill-tag">Audit Response</span>
+                        <span class="skill-tag">Risk Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Project Leadership</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Roadmap Management</span>
+                        <span class="skill-tag">Cross-Functional Teams</span>
+                        <span class="skill-tag">Deliverable Coordination</span>
+                        <span class="skill-tag">Timeline Management</span>
+                        <span class="skill-tag">Scope Definition</span>
+                        <span class="skill-tag">Vendor Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Strategic Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Analytics</span>
+                        <span class="skill-tag">PowerBI</span>
+                        <span class="skill-tag">Gap Analysis</span>
+                        <span class="skill-tag">Pricing Strategy</span>
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Cost-Benefit Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Leadership & Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Management</span>
+                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag">Inclusive Leadership</span>
+                        <span class="skill-tag">Knowledge Transfer</span>
+                        <span class="skill-tag">Performance Management</span>
+                        <span class="skill-tag">Change Champion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <div class="section-header fade-in">
+            <div class="section-label">Recognition</div>
+            <h2 class="section-title">Awards & Achievements</h2>
+            <p class="section-description">
+                Industry recognition for excellence in insurance and financial services
+            </p>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card fade-in">
+                <div class="award-icon">🏆</div>
+                <div class="award-year">2022</div>
+                <h3 class="award-title">Roger Garrett Memorial Award</h3>
+                <p class="award-description">
+                    TAL's prestigious internal award recognizing exceptional performance and contribution
+                </p>
+            </div>
+
+            <a href="https://turkslegal.com.au/sites/default/files/2022-12/2022%20ALUCA%20Turks%20Life%20Insurance%20Scholarship%20-%20Winner%20-%20Elizabeth%20Haddow-Allen_0.pdf" target="_blank" class="award-card fade-in" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="award-icon">📝</div>
+                <div class="award-year">2022</div>
+                <h3 class="award-title">ALUCA TurksLegal Scholarship Winner</h3>
+                <p class="award-description">
+                    Winner for paper 'Group Insurance – The Impact of the Stapling Reforms'
+                </p>
+                <div style="margin-top: 15px; font-size: 13px; color: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace;">
+                    Click to read paper →
+                </div>
+            </a>
+
+            <div class="award-card fade-in">
+                <div class="award-icon">🥈</div>
+                <div class="award-year">2016</div>
+                <h3 class="award-title">ALUCA TurksLegal Second Runner-up</h3>
+                <p class="award-description">
+                    Recognized for research excellence in life insurance industry
+                </p>
+            </div>
+
+            <div class="award-card fade-in">
+                <div class="award-icon">🥇</div>
+                <div class="award-year">2015</div>
+                <h3 class="award-title">ALUCA TurksLegal First Runner-up</h3>
+                <p class="award-description">
+                    Demonstrated thought leadership in insurance research
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header fade-in">
+            <div class="section-label">Qualifications</div>
+            <h2 class="section-title">Education & Professional Development</h2>
+            <p class="section-description">
+                Continuous learning and professional development in governance, risk management, and specialized fields
+            </p>
+        </div>
+        <div class="education-grid">
+            <div class="education-card fade-in">
+                <div class="education-year">2025</div>
+                <div class="education-degree">Reporting to the Board</div>
+                <div class="education-institution">Australian Institute of Company Directors</div>
+            </div>
+
+            <div class="education-card fade-in">
+                <div class="education-year">2025</div>
+                <div class="education-degree">Risk Management and Corporate Governance</div>
+                <div class="education-institution">University of Sydney</div>
+            </div>
+
+            <div class="education-card fade-in">
+                <div class="education-year">2020</div>
+                <div class="education-degree">RG146</div>
+                <div class="education-institution">ASFA</div>
+            </div>
+
+            <div class="education-card fade-in">
+                <div class="education-year">2015 - 2019</div>
+                <div class="education-degree">Master of Rehabilitation Counselling</div>
+                <div class="education-institution">Griffith University</div>
+            </div>
+
+            <div class="education-card fade-in">
+                <div class="education-year">2015</div>
+                <div class="education-degree">Professional Certificate in Mental Health Practice</div>
+                <div class="education-institution">University of Melbourne</div>
+            </div>
+
+            <div class="education-card fade-in">
+                <div class="education-year">2001 - 2005</div>
+                <div class="education-degree">Bachelor of Applied Science (Occupational Therapy)</div>
+                <div class="education-institution">University of Sydney</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header fade-in">
+            <div class="section-label">Let's Connect</div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-description">
+                Ready to discuss partnerships, digital transformation, or strategic initiatives? Let's connect.
+            </p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-methods">
+                <a href="tel:0414510855" class="contact-card fade-in">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">0414 510 855</div>
+                </a>
+
+                <a href="/cdn-cgi/l/email-protection#d89db4b1a2b9babdacb0f6b0b9bcbcb7aff5b9b4b4bdb698acb9b4f6bbb7b5f6b9ad" class="contact-card fade-in">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value"><span class="__cf_email__" data-cfemail="17727b7e6d767572637f397f76737378603a767b7b72795763767b3974787a397662">[email&#160;protected]</span></div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/elizabeth-haddow-allen2192776b/" target="_blank" class="contact-card fade-in">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">Connect on LinkedIn</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2025 Elizabeth Haddow-Allen | Strategic Partnership Leader</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Animation observer removed for compatibility
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Height of fixed navbar
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinksList = document.querySelectorAll('.nav-links a:not(.cta-button)');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinksList.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add stagger effect to capability cards
+        const capabilityCards = document.querySelectorAll('.capability-card');
+        capabilityCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Add st
